@@ -1,38 +1,30 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_mvvm_template/core/constants/app/app_constants.dart';
+import 'package:flutter_mvvm_template/generated/locale_keys.g.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'core/init/lang/language_manager.dart';
+
+void main() => runApp(EasyLocalization(
+    child: MyApp(),
+    supportedLocales: LanguageManager.instance.supportedLocales,
+    path: ApplicationConstants.LANG_ASSET_PATH));
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+      title: 'Material App',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text(LocaleKeys.welcome).tr(),
+        ),
+        body: Center(
+          child: Container(
+            child: Text('Hello World'),
+          ),
+        ),
       ),
-      home: MyHomePage(),
     );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({Key key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
