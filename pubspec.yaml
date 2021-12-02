@@ -21,14 +21,15 @@ environment:
   sdk: ">=2.11.0 <3.0.0"
 
 dependencies:
-  build_runner: ^1.11.1+1
   cupertino_icons: ^1.0.4
   flutter:
     sdk: flutter
   flutter_mobx: ^2.0.2
   mobx: ^2.0.5
+  mobx_codegen: ^2.0.0
 
 dev_dependencies:
+  build_runner: ^2.1.2
   flutter_test:
     sdk: flutter
 
