@@ -1,7 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm_template/core/constants/app/app_constants.dart';
+import 'package:flutter_mvvm_template/core/init/navigation/navigation_route.dart';
+import 'package:flutter_mvvm_template/core/init/navigation/navigation_service.dart';
 import 'package:flutter_mvvm_template/generated/locale_keys.g.dart';
+import 'package:flutter_mvvm_template/view/test/view/test_view.dart';
 
 import 'core/init/lang/language_manager.dart';
 
@@ -15,16 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text(LocaleKeys.welcome).tr(),
-        ),
-        body: Center(
-          child: Container(
-            child: Text('Hello World'),
-          ),
-        ),
-      ),
+      home: Testview(),
+      onGenerateRoute: NavigaitonRoute.instance.generateRoute,
+      navigatorKey: NavigationService.instance.navigatorKey,
     );
   }
 }
