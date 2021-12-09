@@ -1,4 +1,3 @@
-import 'dart:js';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_mvvm_template/core/components/custom_card/not_found_navigation.dart';
